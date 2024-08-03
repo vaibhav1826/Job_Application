@@ -1,5 +1,5 @@
 body{
-background-color: #b9f9fc;
+background-color: #828585;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -11,5 +11,13 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-shadow: 2px 1px  1px rgb(141, 143, 143);
 }
 
+.fw-normal{
+    text-align: center;
+}
 
-
+.card-title{
+    text-align: center;
+}
+#footer{
+    text-align: center;
+}
