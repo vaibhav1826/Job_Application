@@ -5,11 +5,11 @@ const path =require('path');
 const express = require('express');
 
 // importing mongoose for connection with database
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); 
 
 // importing cookie-parser module for access
 const cookieparser = require('cookie-parser');
-
+const Employee = require('./models/employee.js');
 // importing middleware
 const { checkforauthenticationcookie } = require('./middleware/authentication.js'); 
 
@@ -18,6 +18,9 @@ const Port = 1800;
 
 // for redirecting into the user.js
 const userRoute = require('./routes/user.js');
+
+// for redirecting into the employee.js
+const employeeRoute = require('./routes/employee.js');
 
 // connecting database -- mongodb
 mongoose
@@ -36,14 +39,17 @@ app.use(express.static(path.resolve("./public")));
 
 // redirecting it to home page 
 app.get('/',async(req,res)=>{
+    const allEmployees = await Employee.find({});
     res.render("home", {
       user: req.user,
+      employees: allEmployees,
     });
 });
 
 app.use('/user',userRoute);
+app.use('/employee',employeeRoute);
 
 //server starting at localhost:1800
 app.listen(Port,()=>{
     console.log(`server at localhost:${Port}`);
-})
+});
