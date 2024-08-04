@@ -7,10 +7,18 @@
   <body>
     <%- include('./partials/nav') %>
 
-    <div class="container mt-4">
-      <h1><%= employee.title %></h1>
+    <div class="container mt-4" >
+      <h1><%= employee.fullName %></h1>
       <img src="<%= employee.coverImageURL %>" width="700px" />
-      <pre class="mt-3"><%= employee.body %></pre>
+      <pre class="mt-3">
+        Name :- <%= employee.Name %>
+        Contact Number :- <%= employee.ContactNumber %>
+        Addharcard Number:- <%= employee.AddharcardNumber %>
+        Address :- <%= employee.Address %>
+        PANcard Number:- <%= employee.PANcard %>
+        Role:- <%= employee.Role %>
+        Experience:- <%= employee.Experience %>
+      </pre>
     </div>
 
     <div class="container mt-4">
