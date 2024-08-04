@@ -2,11 +2,31 @@ const { Schema , model } = require("mongoose");
 
 const employeeSchema = new Schema(
   {
-    title: {
+    AddharcardNumber: {
       type: String,
       required: true,
     },
-    body: {
+    PANcard: {
+      type: String,
+      required: true,
+    },
+    ContactNumber: {
+      type: String,
+      required: true,
+    },
+    Name: {
+      type: String,
+      required: true,
+    },
+    Role: {
+      type: String,
+      required: true,
+    },
+    Address: {
+      type: String,
+      required: true,
+    },
+    Experience: {
       type: String,
       required: true,
     },
