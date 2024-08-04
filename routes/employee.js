@@ -32,12 +32,17 @@ route.get("/:id", async (req, res) => {
 
 
 route.post("/",upload.single("coverImage"),async(req,res)=>{
-    const { title, body } = req.body;
+    const { Name, ContactNumber, Address , AddharcardNumber, PANcard, Role ,Experience } = req.body;
     const employee = await Employee.create({
-      body,
-      title,
-      createdBy: req.user._id,
-      coverImageURL: `/uploads/${req.file.filename}`,
+    Name,
+    ContactNumber,
+    Address,
+    AddharcardNumber,
+    PANcard,
+    Role,
+    Experience,
+    createdBy: req.user._id,
+    coverImageURL: `/uploads/${req.file.filename}`,
     });
     return res.redirect(`/employee/${employee._id}`);
   });
