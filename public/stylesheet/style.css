@@ -28,3 +28,10 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 25px;
     box-shadow: 1px 1px  1px  rgb(5, 5, 5) ;
 }
+
+.containe{
+    width:80%;
+    margin-left: 10%;
+    margin-right:10%;
+}
+
