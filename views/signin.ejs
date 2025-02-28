@@ -2,28 +2,78 @@
 <html lang="en">
 <head>
   <%- include('./partials/head.ejs') %>
-    <title>Signin</title>
+  <title>Signin</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #87CEEB, #ffffff);
+            color: #333;
+            transition: background 0.5s ease-in-out;
+    }
+
+    .signin-container {
+      max-width: 400px;
+      margin: 5rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-title {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .form-control {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 0.6rem;
+      font-size: 16px;
+      font-weight: 500;
+      background-color: #4a6cf7;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #3152d9;
+      transform: translateY(-2px);
+    }
+
+    .text-muted {
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-<%- include('./partials/nav.ejs') %>
-<div class="container">
-    <form action ="/user/signin" method="post">
+  <%- include('./partials/nav.ejs') %>
+
+  <div class="container">
+    <div class="signin-container">
+      <h2 class="form-title">Sign In</h2>
+
+      <form action="/user/signin" method="post">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1"  name ="email" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</div>
         </div>
+
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1" name="password">
         </div>
-        <button type="submit" class="btn btn-primary" >Submit</button>
+
+        <button type="submit" class="btn btn-primary btn-submit">Submit</button>
       </form>
-</div>
+    </div>
+  </div>
 
-
-<%- include('./partials/script.ejs') %>
-</script>
-    
+  <%- include('./partials/script.ejs') %>
 </body>
 </html>
